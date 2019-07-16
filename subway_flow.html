@@ -1,0 +1,921 @@
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#36712;&#36947;&#23458;&#27969;OD&#20998;&#26512;">&#36712;&#36947;&#23458;&#27969;OD&#20998;&#26512;<a class="anchor-link" href="#&#36712;&#36947;&#23458;&#27969;OD&#20998;&#26512;">&#182;</a></h1><p>根据某一天的轨道客流数据（文件名：filein.csv），数据格式见下图。</p>
+<h3 id="&#39033;&#30446;&#38656;&#27714;&#65306;">&#39033;&#30446;&#38656;&#27714;&#65306;<a class="anchor-link" href="#&#39033;&#30446;&#38656;&#27714;&#65306;">&#182;</a></h3><h4 id="&#19968;&#12289;-&#26681;&#25454;&#20132;&#26131;&#37329;&#39069;&#21644;&#19978;&#19979;&#36710;&#26102;&#21051;&#31579;&#36873;&#31526;&#21512;&#23454;&#38469;&#24773;&#20917;&#30340;&#23458;&#27969;&#35760;&#24405;&#12290;">&#19968;&#12289; &#26681;&#25454;&#20132;&#26131;&#37329;&#39069;&#21644;&#19978;&#19979;&#36710;&#26102;&#21051;&#31579;&#36873;&#31526;&#21512;&#23454;&#38469;&#24773;&#20917;&#30340;&#23458;&#27969;&#35760;&#24405;&#12290;<a class="anchor-link" href="#&#19968;&#12289;-&#26681;&#25454;&#20132;&#26131;&#37329;&#39069;&#21644;&#19978;&#19979;&#36710;&#26102;&#21051;&#31579;&#36873;&#31526;&#21512;&#23454;&#38469;&#24773;&#20917;&#30340;&#23458;&#27969;&#35760;&#24405;&#12290;">&#182;</a></h4><h4 id="&#20108;&#12289;-&#32479;&#35745;&#27599;&#20010;&#31449;&#28857;&#21271;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;&#65292;&#21335;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;&#12290;">&#20108;&#12289; &#32479;&#35745;&#27599;&#20010;&#31449;&#28857;&#21271;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;&#65292;&#21335;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;&#12290;<a class="anchor-link" href="#&#20108;&#12289;-&#32479;&#35745;&#27599;&#20010;&#31449;&#28857;&#21271;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;&#65292;&#21335;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;&#12290;">&#182;</a></h4><h4 id="&#19977;&#12289;-&#27714;&#20004;&#20004;&#31449;&#28857;&#20043;&#38388;&#23458;&#27969;OD(&#36215;&#22987;&#31449;--&#32456;&#28857;&#31449;)&#30697;&#38453;&#12290;">&#19977;&#12289; &#27714;&#20004;&#20004;&#31449;&#28857;&#20043;&#38388;&#23458;&#27969;OD(&#36215;&#22987;&#31449;--&#32456;&#28857;&#31449;)&#30697;&#38453;&#12290;<a class="anchor-link" href="#&#19977;&#12289;-&#27714;&#20004;&#20004;&#31449;&#28857;&#20043;&#38388;&#23458;&#27969;OD(&#36215;&#22987;&#31449;--&#32456;&#28857;&#31449;)&#30697;&#38453;&#12290;">&#182;</a></h4><h4 id="&#22235;&#12289;-&#27714;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#37327;&#12290;">&#22235;&#12289; &#27714;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#37327;&#12290;<a class="anchor-link" href="#&#22235;&#12289;-&#27714;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#37327;&#12290;">&#182;</a></h4><h4 id="&#20116;&#12289;-&#30011;&#20986;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#37327;&#30452;&#26041;&#22270;&#12290;">&#20116;&#12289; &#30011;&#20986;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#37327;&#30452;&#26041;&#22270;&#12290;<a class="anchor-link" href="#&#20116;&#12289;-&#30011;&#20986;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#37327;&#30452;&#26041;&#22270;&#12290;">&#182;</a></h4><p><img src="地铁线路.png" alt="车站代码示意图"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#19968;&#12289;&#39318;&#20808;&#23545;&#25968;&#25454;&#36827;&#34892;&#21021;&#27493;&#30340;&#20998;&#26512;(&#26681;&#25454;&#38656;&#27714;1)&#12290;">&#19968;&#12289;&#39318;&#20808;&#23545;&#25968;&#25454;&#36827;&#34892;&#21021;&#27493;&#30340;&#20998;&#26512;(&#26681;&#25454;&#38656;&#27714;1)&#12290;<a class="anchor-link" href="#&#19968;&#12289;&#39318;&#20808;&#23545;&#25968;&#25454;&#36827;&#34892;&#21021;&#27493;&#30340;&#20998;&#26512;(&#26681;&#25454;&#38656;&#27714;1)&#12290;">&#182;</a></h3><p>不符合情况的值为：</p>
+
+<pre><code>1. 金额为0 
+2. 车站代号为0
+3. 经过1和2布分析后，发现仍有部分上下交易车站代号相同的值，同样清洗掉。</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">global</span> <span class="n">lin</span>
+<span class="n">lin</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">qingdao3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;青岛站&#39;</span><span class="p">,</span> <span class="s1">&#39;人民会堂&#39;</span><span class="p">,</span> <span class="s1">&#39;汇泉广场&#39;</span><span class="p">,</span> <span class="s1">&#39;中山公园&#39;</span><span class="p">,</span> <span class="s1">&#39;太平角公园&#39;</span><span class="p">,</span> <span class="s1">&#39;延安三路&#39;</span><span class="p">,</span> <span class="s1">&#39;五四广场&#39;</span><span class="p">,</span> <span class="s1">&#39;江西路&#39;</span><span class="p">,</span> <span class="s1">&#39;宁夏路&#39;</span><span class="p">,</span> <span class="s1">&#39;敦化路&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;错埠岭&#39;</span><span class="p">,</span> <span class="s1">&#39;清江路&#39;</span><span class="p">,</span> <span class="s1">&#39;双山&#39;</span><span class="p">,</span> <span class="s1">&#39;长沙路&#39;</span><span class="p">,</span> <span class="s1">&#39;地铁大厦&#39;</span><span class="p">,</span> <span class="s1">&#39;海尔路&#39;</span><span class="p">,</span> <span class="s1">&#39;万年泉路&#39;</span><span class="p">,</span> <span class="s1">&#39;李村&#39;</span><span class="p">,</span> <span class="s1">&#39;君峰路&#39;</span><span class="p">,</span> <span class="s1">&#39;振华路&#39;</span><span class="p">,</span> <span class="s1">&#39;永平路&#39;</span><span class="p">,</span> <span class="s1">&#39;青岛北站&#39;</span><span class="p">]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;filein.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="c1"># @timeit.timeit 初步筛选</span>
+<span class="k">def</span> <span class="nf">data_static</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># 删除 含有特定数值/上下车站相同 的行</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;交易金额&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">0</span><span class="p">])]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;上次交易车站&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">0</span><span class="p">])]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;上次交易车站&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;此次交易车站&#39;</span><span class="p">]]</span>
+
+    <span class="c1"># df.index = [i for i in range(df.shape[0])]  # 重新建立索引</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># 重新建立索引 法2</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;交易金额&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">d_frame</span> <span class="o">=</span> <span class="n">data_static</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;初步筛选后的数据(部分):</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">d_frame</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>初步筛选后的数据(部分):
+    start  end
+0    350  344
+1    350  340
+2    361  357
+3    350  340
+4    347  340
+5    358  341
+6    347  358
+7    345  357
+8    356  344
+9    356  360
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#20108;&#12289;&#32479;&#35745;&#27599;&#20010;&#31449;&#28857;&#21271;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;">&#20108;&#12289;&#32479;&#35745;&#27599;&#20010;&#31449;&#28857;&#21271;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;<a class="anchor-link" href="#&#20108;&#12289;&#32479;&#35745;&#27599;&#20010;&#31449;&#28857;&#21271;&#21521;&#27599;&#20010;&#31449;&#28857;&#30340;&#19978;&#23458;&#20154;&#25968;">&#182;</a></h3><p>(即上车站代号小于下车站代号)， 南向每个站点的上客人数(和上边相反)。</p>
+<p>南北客流相加即为此站点总客流。</p>
+<p>函数：实现以上功能并绘制柱状图。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">flow</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>  <span class="c1"># 统计客流量</span>
+    <span class="n">df_n</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]]</span>
+    <span class="n">n_count</span> <span class="o">=</span> <span class="n">df_n</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># n_count&lt;series类型&gt;</span>
+
+    <span class="n">df_s</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]]</span>
+    <span class="n">s_count</span> <span class="o">=</span> <span class="n">df_s</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+    <span class="n">df_mer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">s_count</span><span class="p">,</span> <span class="n">n_count</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">df_mer</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">]</span>
+    <span class="c1"># 按列填充空值 法1</span>
+    <span class="c1"># df_mer.loc[df_mer[&#39;N&#39;].isnull(), &#39;N&#39;] = 0</span>
+    <span class="n">df_mer</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mer</span><span class="p">[</span><span class="s1">&#39;N&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df_mer</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mer</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df_mer</span><span class="p">[</span><span class="s1">&#39;SUM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_mer</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">global</span> <span class="n">lin</span>
+    <span class="n">lin</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_mer</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>    
+    <span class="n">df_mer</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">qingdao3</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span>
+    <span class="n">df_mer</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+    <span class="c1"># 在柱子上显示总客流量数据</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_mer</span><span class="p">[</span><span class="s1">&#39;SUM&#39;</span><span class="p">]):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">y</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;车站&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;客流量&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;客流量统计柱形图&quot;</span><span class="p">)</span>
+    <span class="c1"># plt.xticks(rotation=60)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># 修改标签字体大小</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;flow.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span> <span class="c1"># bbox_inches解决图片显示不全的问题</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+    <span class="k">return</span> <span class="n">df_mer</span>
+
+<span class="n">df_merge</span> <span class="o">=</span> <span class="n">flow</span><span class="p">(</span><span class="n">d_frame</span><span class="p">)</span>
+<span class="n">df_merge</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[104]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>N</th>
+      <th>S</th>
+      <th>SUM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>延安三路</th>
+      <td>27</td>
+      <td>22</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>五四广场</th>
+      <td>23</td>
+      <td>30</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>江西路</th>
+      <td>37</td>
+      <td>97</td>
+      <td>134</td>
+    </tr>
+    <tr>
+      <th>宁夏路</th>
+      <td>31</td>
+      <td>56</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>敦化路</th>
+      <td>25</td>
+      <td>53</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>错埠岭</th>
+      <td>25</td>
+      <td>108</td>
+      <td>133</td>
+    </tr>
+    <tr>
+      <th>清江路</th>
+      <td>12</td>
+      <td>97</td>
+      <td>109</td>
+    </tr>
+    <tr>
+      <th>双山</th>
+      <td>23</td>
+      <td>117</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>长沙路</th>
+      <td>23</td>
+      <td>73</td>
+      <td>96</td>
+    </tr>
+    <tr>
+      <th>地铁大厦</th>
+      <td>13</td>
+      <td>58</td>
+      <td>71</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#19977;&#12289;OD(origin-destination)&#30697;&#38453;&#30340;&#21046;&#20316;">&#19977;&#12289;OD(origin destination)&#30697;&#38453;&#30340;&#21046;&#20316;<a class="anchor-link" href="#&#19977;&#12289;OD(origin-destination)&#30697;&#38453;&#30340;&#21046;&#20316;">&#182;</a></h3><p>通过groupby(),value_counts(),unstack(),pd.DataFrame()
+等函数实现。</p>
+<p>注：行标签为始发站，列标签为目的站</p>
+<p>参考资料:
+<a href="https://www.jianshu.com/p/42f1d2909bb6">https://www.jianshu.com/p/42f1d2909bb6</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">origin_destination</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+    <span class="c1"># 生成DataFrame时就将数据类型转为int</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">l</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/&#39;</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">df_od</span> <span class="o">=</span> <span class="n">origin_destination</span><span class="p">(</span><span class="n">d_frame</span><span class="p">,</span> <span class="n">lin</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># 显示所有列</span>
+<span class="n">df_od</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">qingdao3</span>
+<span class="n">df_od</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">qingdao3</span>
+<span class="n">df_od</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;od.csv&#39;</span><span class="p">)</span>
+<span class="n">df_od</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[105]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>青岛站</th>
+      <th>人民会堂</th>
+      <th>汇泉广场</th>
+      <th>中山公园</th>
+      <th>太平角公园</th>
+      <th>延安三路</th>
+      <th>五四广场</th>
+      <th>江西路</th>
+      <th>宁夏路</th>
+      <th>敦化路</th>
+      <th>错埠岭</th>
+      <th>清江路</th>
+      <th>双山</th>
+      <th>长沙路</th>
+      <th>地铁大厦</th>
+      <th>海尔路</th>
+      <th>万年泉路</th>
+      <th>李村</th>
+      <th>君峰路</th>
+      <th>振华路</th>
+      <th>永平路</th>
+      <th>青岛北站</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>青岛站</th>
+      <td>/</td>
+      <td>8</td>
+      <td>3</td>
+      <td>2</td>
+      <td>6</td>
+      <td>12</td>
+      <td>22</td>
+      <td>14</td>
+      <td>10</td>
+      <td>7</td>
+      <td>15</td>
+      <td>5</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2</td>
+      <td>3</td>
+      <td>8</td>
+      <td>16</td>
+      <td>3</td>
+      <td>5</td>
+      <td>1</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>人民会堂</th>
+      <td>1</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>3</td>
+      <td>5</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>9</td>
+      <td>9</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>汇泉广场</th>
+      <td>1</td>
+      <td>0</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>中山公园</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>/</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>太平角公园</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>延安三路</th>
+      <td>5</td>
+      <td>15</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>/</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>五四广场</th>
+      <td>15</td>
+      <td>11</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>/</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>江西路</th>
+      <td>37</td>
+      <td>43</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>3</td>
+      <td>/</td>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>宁夏路</th>
+      <td>16</td>
+      <td>23</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>7</td>
+      <td>4</td>
+      <td>1</td>
+      <td>/</td>
+      <td>0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>敦化路</th>
+      <td>22</td>
+      <td>14</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>7</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>/</td>
+      <td>3</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>错埠岭</th>
+      <td>29</td>
+      <td>30</td>
+      <td>4</td>
+      <td>4</td>
+      <td>7</td>
+      <td>14</td>
+      <td>9</td>
+      <td>8</td>
+      <td>1</td>
+      <td>2</td>
+      <td>/</td>
+      <td>4</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>清江路</th>
+      <td>16</td>
+      <td>20</td>
+      <td>7</td>
+      <td>5</td>
+      <td>2</td>
+      <td>13</td>
+      <td>7</td>
+      <td>11</td>
+      <td>7</td>
+      <td>2</td>
+      <td>7</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>双山</th>
+      <td>28</td>
+      <td>13</td>
+      <td>5</td>
+      <td>7</td>
+      <td>2</td>
+      <td>19</td>
+      <td>13</td>
+      <td>6</td>
+      <td>7</td>
+      <td>5</td>
+      <td>11</td>
+      <td>1</td>
+      <td>/</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>长沙路</th>
+      <td>16</td>
+      <td>15</td>
+      <td>1</td>
+      <td>5</td>
+      <td>2</td>
+      <td>14</td>
+      <td>6</td>
+      <td>6</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>地铁大厦</th>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>10</td>
+      <td>4</td>
+      <td>10</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>/</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>海尔路</th>
+      <td>10</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>万年泉路</th>
+      <td>24</td>
+      <td>21</td>
+      <td>5</td>
+      <td>4</td>
+      <td>4</td>
+      <td>24</td>
+      <td>27</td>
+      <td>21</td>
+      <td>12</td>
+      <td>4</td>
+      <td>4</td>
+      <td>5</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>/</td>
+      <td>5</td>
+      <td>5</td>
+      <td>4</td>
+      <td>20</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>李村</th>
+      <td>37</td>
+      <td>19</td>
+      <td>10</td>
+      <td>7</td>
+      <td>5</td>
+      <td>24</td>
+      <td>34</td>
+      <td>23</td>
+      <td>18</td>
+      <td>19</td>
+      <td>17</td>
+      <td>12</td>
+      <td>5</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>/</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>君峰路</th>
+      <td>14</td>
+      <td>9</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>6</td>
+      <td>12</td>
+      <td>8</td>
+      <td>12</td>
+      <td>4</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>12</td>
+      <td>1</td>
+      <td>/</td>
+      <td>2</td>
+      <td>3</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>振华路</th>
+      <td>8</td>
+      <td>8</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>16</td>
+      <td>8</td>
+      <td>15</td>
+      <td>6</td>
+      <td>8</td>
+      <td>0</td>
+      <td>9</td>
+      <td>4</td>
+      <td>2</td>
+      <td>4</td>
+      <td>7</td>
+      <td>2</td>
+      <td>3</td>
+      <td>/</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>永平路</th>
+      <td>9</td>
+      <td>8</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>12</td>
+      <td>18</td>
+      <td>3</td>
+      <td>8</td>
+      <td>9</td>
+      <td>9</td>
+      <td>5</td>
+      <td>3</td>
+      <td>9</td>
+      <td>0</td>
+      <td>3</td>
+      <td>16</td>
+      <td>10</td>
+      <td>6</td>
+      <td>1</td>
+      <td>/</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>青岛北站</th>
+      <td>22</td>
+      <td>7</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>6</td>
+      <td>17</td>
+      <td>15</td>
+      <td>20</td>
+      <td>7</td>
+      <td>21</td>
+      <td>14</td>
+      <td>6</td>
+      <td>4</td>
+      <td>8</td>
+      <td>9</td>
+      <td>20</td>
+      <td>40</td>
+      <td>7</td>
+      <td>2</td>
+      <td>2</td>
+      <td>/</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
