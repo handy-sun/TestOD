@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="867897a2-fc70-4ac9-8e78-0e40ef42b443" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flow.png" beforeDir="false" afterPath="$PROJECT_DIR$/flow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subway_flow.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/subway_flow.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subway_flow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="96" selection-start-line="5" selection-end-line="6" selection-end-column="96" />
+            <state relative-caret-position="98">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#23#42#0" expanded="true" />
               </folding>
@@ -63,6 +65,7 @@
         <option value="$PROJECT_DIR$/dataf.py" />
         <option value="$PROJECT_DIR$/sub_flow.ipynb" />
         <option value="$PROJECT_DIR$/subway_flow.py" />
+        <option value="$PROJECT_DIR$/qq.ipynb" />
       </list>
     </option>
   </component>
@@ -78,6 +81,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -89,7 +93,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,6 +211,8 @@
       <workItem from="1563325785859" duration="1204000" />
       <workItem from="1563350853580" duration="691000" />
       <workItem from="1563356235829" duration="643000" />
+      <workItem from="1563422490475" duration="17000" />
+      <workItem from="1563428170713" duration="11010000" />
     </task>
     <task id="LOCAL-00001" summary="okok">
       <created>1563275889269</created>
@@ -241,13 +246,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58725000" />
+    <option name="totallyTimeSpent" value="69752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11727079" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,13 +266,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32861805" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" weight="0.32861805" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.534202" />
-      <window_info anchor="bottom" id="Jupyter" order="13" sideWeight="0.49946696" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.6823266" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.53355706" />
+      <window_info anchor="bottom" id="Jupyter" order="13" sideWeight="0.49946696" weight="0.32861805" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.45469084" />
+      <window_info anchor="right" auto_hide="true" id="SciView" order="3" show_stripe_button="false" type="FLOATING" weight="0.45469084" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -414,18 +420,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subway_flow.ipynb">
+    <entry file="file://$PROJECT_DIR$/qq.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://D:/Anaconda3 2019.03/Lib/site-packages/statsmodels/tsa/vector_ar/var_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="2170" column="8" selection-start-line="2170" selection-start-column="8" selection-end-line="2170" selection-end-column="8" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subway_flow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="96" selection-start-line="5" selection-end-line="6" selection-end-column="96" />
+        <state relative-caret-position="98">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#23#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3 2019.03/Lib/site-packages/matplotlib/axes/_axes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1295">
+          <caret line="5581" column="8" selection-start-line="5581" selection-start-column="8" selection-end-line="5581" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3 2019.03/Lib/site-packages/matplotlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1304">
+          <caret line="935" column="4" selection-start-line="935" selection-start-column="4" selection-end-line="935" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subway_flow.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
   </component>
 </project>
